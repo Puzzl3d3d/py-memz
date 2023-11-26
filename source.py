@@ -605,7 +605,7 @@ def display():
 
 createThread(display)
 time.sleep(1)
-os.remove(file.name)
+os.remove("note")
 
 def payload_thread_method(method_name, *args, **kwargs):
     print(args, kwargs)
