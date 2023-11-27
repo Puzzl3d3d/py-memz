@@ -18,3 +18,5 @@ Everything else by me (puzzl3d on discord)
 Original trojan by Leurak
 
 Idea to make in python by doot
+
+Mental support by doot
